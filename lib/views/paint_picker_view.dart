@@ -73,8 +73,8 @@ class _PaintPickerViewState extends State<PaintPickerView> {
                   setState(
                     () => currentColor = pickerColor,
                   );
-                  Navigator.of(context).pop();
                 }
+                Navigator.of(context).pop();
               },
             ),
           ],

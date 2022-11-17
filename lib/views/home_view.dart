@@ -1,3 +1,4 @@
+import 'package:circular_menu/circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:paint_app/views/paint_picker_view.dart';
 import 'package:paint_app/views/pencil_paint.dart';
@@ -30,6 +31,8 @@ class _HomeViewState extends State<HomeView>
     super.dispose();
     _tabController.dispose();
   }
+
+  GlobalKey<CircularMenuState> key = GlobalKey<CircularMenuState>();
 
   @override
   Widget build(BuildContext context) {
