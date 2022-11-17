@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:paint_app/views/paint_picker_view.dart';
+import 'package:paint_app/views/pencil_paint.dart';
+import 'package:paint_app/views/rubber_view.dart';
+import 'package:paint_app/views/text_view.dart';
+import 'package:paint_app/views/undo_view.dart';
 
 import '../constants.dart';
 
@@ -67,24 +72,8 @@ class _HomeViewState extends State<HomeView>
             child: TabBarView(
               controller: _tabController,
               children: const [
-                Center(
-                  child: Text(
-                    'Undo',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    'Text',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+                UndoView(),
+                TextView(),
                 Center(
                   child: Text(
                     'Save',
@@ -94,33 +83,9 @@ class _HomeViewState extends State<HomeView>
                     ),
                   ),
                 ),
-                Center(
-                  child: Text(
-                    'Rubber',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    'Paint Wheel',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    'Pensil',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+                RubberView(),
+                PaintPickerView(),
+                PencilView(),
               ],
             ),
           ),
