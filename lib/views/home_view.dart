@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paint_app/views/paint_picker_view.dart';
 import 'package:paint_app/views/pencil_paint.dart';
 import 'package:paint_app/views/rubber_view.dart';
+import 'package:paint_app/views/save_view.dart';
 import 'package:paint_app/views/text_view.dart';
 import 'package:paint_app/views/undo_view.dart';
 
@@ -74,15 +75,7 @@ class _HomeViewState extends State<HomeView>
               children: const [
                 UndoView(),
                 TextView(),
-                Center(
-                  child: Text(
-                    'Save',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+                SaveView(),
                 RubberView(),
                 PaintPickerView(),
                 PencilView(),

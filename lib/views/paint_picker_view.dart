@@ -18,9 +18,11 @@ class _PaintPickerViewState extends State<PaintPickerView> {
 
 // ValueChanged<Color> callback
   void changeColor(Color color) {
-    setState(
-      () => pickerColor = color,
-    );
+    if (mounted) {
+      setState(() {
+        pickerColor = color;
+      });
+    }
   }
 
   @override
@@ -50,6 +52,7 @@ class _PaintPickerViewState extends State<PaintPickerView> {
   Future<dynamic> colorPickerDialog(BuildContext context) {
     return showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
           title: const Text('Pick a color!'),
@@ -66,8 +69,12 @@ class _PaintPickerViewState extends State<PaintPickerView> {
               ),
               child: const Text('Got it'),
               onPressed: () {
-                setState(() => currentColor = pickerColor);
-                Navigator.of(context).pop();
+                if (mounted) {
+                  setState(
+                    () => currentColor = pickerColor,
+                  );
+                  Navigator.of(context).pop();
+                }
               },
             ),
           ],
